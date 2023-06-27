@@ -1,0 +1,148 @@
+.rate_card {
+    min-width: 415px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+    margin: 70px 37px 0px 0px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 10px 0px 0px;
+}
+.rate_card.beginner.active {
+    border: 2px solid #FFB64F;
+}
+.rate_card.pro.active {
+    border: 2px solid #7CE3E1;
+}
+.rate_card.business.active {
+    border: 2px solid #000000;
+}
+.rate_name {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15px 24px 30px;
+    border-radius: 6px 6px 0px 0px;
+}
+.rate_name_item {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+}
+.rate_name.beginner {
+    background: #FFB64F;
+}
+.rate_name.pro {
+    padding: 0;
+    padding-bottom: 13px;
+    background: #7CE3E1;
+}
+.rate_name.business {
+    padding-bottom: 29px;
+    background: #000000;
+    color: #FFFFFF;
+}
+.rate_name_item.pro {
+    padding: 30px 15px 0px 30px;
+}
+.current_rate_wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 0;
+}
+.current_rate {
+    padding: 3px 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3BA5E0;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+.rate_price {
+    white-space: nowrap;
+    padding: 30px 15px 0px 30px;
+}
+.rate_price.active {
+    padding-top: 0px;
+}
+.rate_price.business {
+    padding-bottom: 22px;
+}
+.price {
+    margin-right: 19px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+.old_price {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    text-decoration-line: line-through;
+    color: #000000;
+    opacity: 0.5;
+}
+.prices {
+    margin-bottom: 10px;
+}
+.rate_description {
+    padding: 59px 15px 55px 30px;
+}
+.rate_description_header {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+.btnRates {
+    margin-top: 55px;
+    padding: 18px 40px;
+    width: 355px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+}
+.btnRates:disabled {
+    background: #D2D2D2;
+    color: #000;
+    opacity: 1;
+}
+@media (max-width: 1492px) {
+    .rate_card {
+        flex: 0 0 45%;
+    }
+}
+@media (max-width: 1042px) {
+    .rate_card {
+        flex: 0 0 65%;
+    }
+}
+@media (max-width: 492px) {
+    .rate_card {
+        min-width: 335px;
+        flex: 0 0 100%;
+        margin: 37px 0;
+    }
+    .rate_name_icon {
+        margin-top: -15px;
+        margin-left: -15px;
+    }
+    .rate_description {
+        padding: 36px 15px 39px 30px;
+    }
+    .btnRates {
+        margin-top: 37px;
+        padding: 18px 20px;
+        width: 287px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

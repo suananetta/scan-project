@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
 import './App.css';
 
+import Header from './components/Header/Header'
+import PrivatRoutes from './components/_routes/privateRoutes';
+import LoginPage from './components/Main/LoginPage/LoginPage'
+import SearchPage from './components/Main/SearchPage/SearchPage';
+import ResultPage from './components/Main/ResultPage/ResultPage';
+import Main from './components/Main/Main'
+import Footer from './components/Footer/Footer'
+import { logout } from './components/_redux/features/userSlice';
+
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if(localStorage.getItem('token')) {
+      let expire = JSON.parse(localStorage.getItem('token')).expire;
+      let expireDate = new Date(expire);
+      let currentDate = new Date();
+
+      if(currentDate > expireDate) {
+        dispatch(logout());
+      }
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <Header/>
+        <Routes>
+          <Route path='/' element={<Main/>}></Route>
+          <Route path='/loginPage' element={<LoginPage/>}></Route>
+          <Route element={<PrivatRoutes/>}>
+            <Route path='/searchPage' element={<SearchPage/>}></Route>
+            <Route path='/resultPage' element={<ResultPage/>}></Route>
+          </Route>
+        </Routes>
+        <Footer/>
+    </BrowserRouter>
   );
 }
 

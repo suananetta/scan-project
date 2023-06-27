@@ -1,0 +1,28 @@
+.footer_info {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 45px 25px 60px;
+}
+.footer_info_item {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: right;
+    letter-spacing: 0.01em;
+}
+.footer_info_item.cr {
+    margin-top: 21px;
+}
+.footer_logo {
+    margin-left: 60px;
+    display: flex;
+}
+@media (max-width: 500px) {
+    .footer_info {
+        padding: 10px;
+    }
+    .footer_logo {
+        margin-left: 14px;
+    }
+}

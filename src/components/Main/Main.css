@@ -1,0 +1,233 @@
+h1 {
+    font-size: 60px;
+    line-height: 72px;
+    letter-spacing: 0.01em;
+}
+h3 {
+    font-size: 45px;
+    line-height: 54px;
+    letter-spacing: 0.01em;
+}
+h4 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0.01em;
+}
+.enter_block {
+    display: flex;
+    justify-content: space-between;
+}
+.enter_background {
+    display: block;
+}
+.enter_info {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 35%;
+}
+.enter_p {
+    width: 534px;
+    margin-bottom: 70px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+}
+.reasons_block {
+    padding-top: 109px;
+}
+.rates_block {
+    padding-top: 109px;
+}
+.rates_cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.rate_description_item {
+    display: flex;
+    padding: 8px 0;
+}
+.check_mark {
+    display: block;
+    padding: 0 5px;
+}
+@media (max-width: 1340px) {
+    .enter_block {
+        margin-top: 0px;
+    }
+}
+@media (max-width: 1220px) {
+    .enter_block {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 48px;
+        line-height: 52px;
+    }
+    h3 {
+        font-size: 38px;
+        line-height: 48px;
+    }
+    .reasons_block {
+        padding-top: 0px;
+    }
+    .rates_block {
+        padding-top: 39px;
+    }
+}
+@media (max-width: 1040px) {
+    .rates_cards {
+        justify-content: center;
+    }
+}
+@media (max-width: 804px) {
+    .enter_background {
+        width: 529px;
+        height: 493px;
+    }
+    h1 {
+        font-size: 38px;
+        line-height: 42px;
+    }
+    h3 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+    .reasons_block {
+        padding-top: 29px;
+    }
+    .rates_block {
+        padding-top: 59px;
+    }
+}
+@media (max-width: 644px) {
+    .enter_background {
+        width: 429px;
+        height: 393px;
+    }
+    .enter_p {
+        width: 334px;
+        margin-bottom: 40px;
+        font-size: 18px;
+        line-height: 21.78px;
+    }
+    h1 {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+    h3 {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+    .reasons_block {
+        padding-top: 0px;
+    }
+    .rates_block {
+        padding-top: 29px;
+    }
+}
+@media (max-width: 534px) {
+    .enter_p {
+        width: 334px;
+        margin-bottom: 40px;
+        font-size: 18px;
+        line-height: 21.78px;
+    }
+    h1 {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+    h3 {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+    .reasons_block {
+        padding-top: 0px;
+    }
+    .rates_block {
+        padding-top: 29px;
+    }
+}
+@media (max-width: 498px) {
+    .enter_block {
+        margin-bottom: 0px;
+    }
+}
+@media (max-width: 375px) {
+    h4 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 22px;
+    }
+    .enter_background {
+        width: 347px;
+        height: 342px;
+    }
+    .reasons_bg {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.slider {
+    margin: 70px 0px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.arrows {
+    padding: 0px;
+    color: none;
+    background: none;
+}
+.arrows:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+    box-shadow: none;
+    transition: 0.25s;
+}
+.slider_block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.slider_item {
+    height: 176px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 29%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+@media (max-width: 1580px) {
+    .slider_item {
+        padding: 14px;
+        flex: 0 1 25%;
+    }
+}
+@media (max-width: 1220px) {
+    .slider_item {
+        padding: 14px;
+        flex: 0 1 100%;
+    }
+}
+@media (max-width: 375px) {
+    .slider_item {
+        height: 188px;
+    }
+    .slider_icon {
+        width: 39px;
+        height: 64px;
+        margin-bottom: 15px;
+    }
+    .slider_text {
+        line-height: 16px;
+    }
+}
+
