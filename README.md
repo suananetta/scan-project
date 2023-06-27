@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+<h1>Проект "СКАН"</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Компания СКАН разработала новый API для поиска публикаций о компании (юридическом лице) в средствах массовой информации по его ИНН. 
+Задача данного проекта — разработать клиентскую часть в соответствии с <a href="https://www.figma.com/file/u3MOjzYnTnirz712GrLbFv/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82-%D0%A1%D0%9A%D0%90%D0%9D">макетом</a>.
 
-## Available Scripts
+<h4><a href="https://docs.google.com/spreadsheets/d/16sXmrKf--J-5F7AMwMNCpRVZovQmTsvF_tcDoFm1en8/edit?usp=sharing">Ссылка</a> на доступы для проверки функцианала проекта</h4>
 
-In the project directory, you can run:
+<h2>Функциональные требования</h2>
+Клиентская часть сервиса состоит из:
+<li>главной страницы,</li>
+<li>формы авторизации,</li>
+<li>формы для ввода параметров запроса,</li>
+<li>страницы с выводом результатов запроса.</li>
 
-### `npm start`
+<h3>Главная страница</h3>
+<h4>1. Шапка:</h4>
+<p>Содержит: логотип, меню и панель управления учетной записью. Страницы "Тарифы" и "FAQ" выходят за рамки данного ТЗ, поэтому ссылки на них пустые.<br>
+Шапка сайта выглядит по-разному для авторизованного и неавторизованного пользователя:</p>
+<li>для неавторизованного пользователя: доступны кнопки "Зарегистрироваться" и "Войти", которые ведут на страницу авторизации,</li>
+<li>для авторизованного пользователя: аватар пользователя с именем и кнопкой "Выйти", которая сбрасывает авторизацию. Слева от аватара находится панель с информацией о лимите по компаниям в аккаунте и количестве уже используемых компаний. Эта информация подгружается не сразу, для её получения отправляется отдельный запрос.</li>
+<h4>2. Главная страница:</h4>
+<p>Главная страница содержит описание сервиса и доступна всем пользователям без авторизации.</p>
+<p>Авторизованному пользователю доступна кнопка "Запросить данные", которая ведёт на страницу ввода параметров поиска. </p>
+<p>Карточки в разделе "Почему именно мы" переключаются по принципу карусели: клик на стрелке слева или справа переключает карточки в соответствующем направлении.</p>
+<p>В разделе "Наши тарифы" перечислены возможные тарифы. Кнопка "Подробнее" — заглушка, при клике на неё ничего не происходит.
+Если пользователь авторизован, карточка с используемым им тарифом выглядит иначе, чем остальные</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3>Форма авторизации</h3>
+<p>Эта страница содержит форму с полями для ввода логина и пароля. При отсутствии одного из значений — логина или пароля — кнопка "Войти" неактивна, и при клике на неё ничего не происходит.</p>
+<p>После ввода всех необходимых значений кнопка становится активной. При нажатии на неё отправляется запрос на авторизацию, результатом которого является токен и дата, до которой он действителен.</p>
+<p>В рамках ТЗ следующие элементы формы нефункциональны:</p>
+<li>вкладка "Зарегистрироваться",</li>
+<li>ссылка "Восстановить пароль",</li>
+<li>кнопки "Войти" через Google/Facebook/Яндекс.</li>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h3>Форма для ввода параметров запроса</h3>
+<p>Данная страница содержит основу функционала сервиса: форму, где пользователь задаёт параметры поиска.</p>
+<p>Эта страница доступна только авторизованным пользователям. Если неавторизованный пользователь пытается её открыть, он перенаправляется на главную страницу сервиса.</p>
+<p>Форма имеет обязательные поля, которые отмечены звездочками - если хотя бы одно из них не заполнено или заполнено неверно, кнопка "Поиск" неактивна.</p>
+<p>Обязательные поля также имеют проверку на корректность вводимых значений - если значение не соответствует формату, выводится ошибка и выделяется поле ввода, в котором вызвана эта ошибка. </p>
+<p>Если поисковый запрос введён корректно, по нажатии на кнопку "Поиск" выполняется запрос и открывается страница с результатами.</p>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h3>Вывод результатов поиска</h3>
+<p>Данная страница содержит результаты ранее введённого запроса и отображает:</p>
+<li>общую сводку по количеству публикаций и рискам в виде слайдера с возможностью перелистывать по принципу карусели,</li>
+<li>публикации в соответствии с параметрами поиска. В данном блоке реализована ленивая загрузка -  сначала показано 10 первых результатов и добавлена кнопка "Показать больше", по нажатии на которую подгружаются следующие 10 результатов. Когда загружены последние из найденных публикаций, кнопка "Показать больше" скрыта.</li>
