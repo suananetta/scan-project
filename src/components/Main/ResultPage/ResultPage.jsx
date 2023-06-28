@@ -32,16 +32,12 @@ function ResultPage() {
     const [articles, setArticles] = useState([]);
     let [histogramsTotal, setHistogramsTotal] = useState(0);
 
-    // useEffect(() => window.location.reload(), [])
-
     useEffect(() => {
         if(searchResult.histograms.length !== 0) {
             setHistogramsTotal(searchResult.histograms.length === 0? 0 : getTotalNum([...searchResult.histograms[0].data]));
             setArticles([...searchResult.documents].slice(0, 10));
         }
     }, [searchResult])
-
-    console.log(searchResult);
     
     return (
             <main className='result'>
@@ -69,7 +65,7 @@ function ResultPage() {
                 
                 <div>
                     <h5 className='list_title'>Список документов</h5>
-                    {docsLoading?
+                    {articles.length === 0?
                         <div className='result_load'>
                         <LoaderCircle
                             strokeWidth={5}
@@ -77,9 +73,6 @@ function ResultPage() {
                             width={100}
                         />
                         </div>
-                        :
-                        articles.length === 0? 
-                        <p>Статей не найдено!</p>
                         :
                         <div className='result_list'>
                             <div className='articles_block'>
