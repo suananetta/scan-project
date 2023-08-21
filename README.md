@@ -3,14 +3,26 @@
 Компания СКАН разработала новый API для поиска публикаций о компании (юридическом лице) в средствах массовой информации по его ИНН. 
 Задача данного проекта — разработать клиентскую часть в соответствии с <a href="https://www.figma.com/file/u3MOjzYnTnirz712GrLbFv/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82-%D0%A1%D0%9A%D0%90%D0%9D">макетом</a>.
 
+<h4><a href="https://suananetta.github.io/scan-project/">Попробовать</a></h4>
 <h4><a href="https://docs.google.com/spreadsheets/d/16sXmrKf--J-5F7AMwMNCpRVZovQmTsvF_tcDoFm1en8/edit?usp=sharing">Ссылка</a> на доступы для проверки функцианала проекта</h4>
 
+<h2>Используемый стек:</h2>
+<ul>
+<li>HTML5,</li>
+<li>CSS3,</li>
+<li>JS,</li>
+<li>React, React-router-dom,</li>
+<li>Redux Toolkit (persist, thunk),</li>
+<li>Rest API (axios),</li>
+</ul>
+
 <h2>Функциональные требования</h2>
-Клиентская часть сервиса состоит из:
+<ul>Клиентская часть сервиса состоит из:
 <li>главной страницы,</li>
 <li>формы авторизации,</li>
 <li>формы для ввода параметров запроса,</li>
 <li>страницы с выводом результатов запроса.</li>
+</ul>
 
 <h3>Главная страница</h3>
 <h4>1. Шапка:</h4>
