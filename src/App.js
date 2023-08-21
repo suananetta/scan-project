@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import { HashRouter, Route, Routes} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -29,7 +29,7 @@ function App() {
   }, [])
 
   return (
-    <BrowserRouter>
+    <HashRouter>
         <Header/>
         <Routes>
           <Route path='/' element={<Main/>}></Route>
@@ -40,7 +40,7 @@ function App() {
           </Route>
         </Routes>
         <Footer/>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
